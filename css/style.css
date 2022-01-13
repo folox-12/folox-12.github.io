@@ -208,7 +208,7 @@ h6 {
 }
 
 .footer {
-	height: 70px;
+	min-height: 70px;
 	background-color: #000;
 	padding: 30px 0;
 }
