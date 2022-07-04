@@ -1,7 +1,7 @@
 data = [
   {
     title: "YourLogo",
-    description: "landing page",
+    description: "SCSS, JS",
     img: "img/YourLogo.png",
     link: "mylogo/index.html",
   },
@@ -12,6 +12,12 @@ data = [
     link: "simpleshop/index.html",
   },
 ];
+const counter = (data) => {
+  return `
+	<span class = 'gallery-counter__texts'>count of my project:</span>
+	 <span class = 'gallery-counter__number'>${data.length}</span>
+	 `;
+};
 const template = (data) => {
   return data
     .map(({ title, description, img, link }) => {
@@ -38,4 +44,5 @@ const template = (data) => {
 };
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".gallery__row").innerHTML = template(data);
+  document.querySelector(".gallery__counter").innerHTML = counter(data);
 });

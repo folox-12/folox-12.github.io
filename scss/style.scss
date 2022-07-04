@@ -36,6 +36,11 @@ body {
 }
 
 .gallery {
+	&__counter {
+		text-align-last: right;
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
 	&__row {
 		padding: 15px;
 		display: flex;
@@ -56,6 +61,17 @@ body {
 			transform: scale(1.1);
 			cursor: pointer;
 		}
+	}
+}
+.gallery-counter {
+	&__texts {
+		display: inline-block;
+		&:first-letter {
+			text-transform: capitalize;
+		}
+		color: grey;
+	}
+	&__number {
 	}
 }
 .gallery-item {
