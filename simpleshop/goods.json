@@ -1,0 +1,17 @@
+{
+	"tsh1": {
+		"name": "Футболка 'Simple'",
+		"cost": 200,
+		"image": "img/poU66k2O6sJ2IIk.png"
+	},
+	"tsh2": {
+		"name": "Футболка 'Picture'",
+		"cost": 899,
+		"image": "img/morginal.png"
+	},
+	"tsh3": {
+		"name": "Футболка 'RABOTYGA'",
+		"cost": 666,
+		"image": "img/работяга.png"
+	}
+}
