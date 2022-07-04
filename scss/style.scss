@@ -34,23 +34,24 @@ body {
 .main {
 	flex: 1 0 auto;
 }
-
 .gallery {
 	&__counter {
-		text-align-last: right;
+		text-align: center;
 		font-size: 1.5rem;
+		padding: 5px 10px;
 		margin-bottom: 15px;
 	}
 	&__row {
 		padding: 15px;
 		display: flex;
-		gap: 15px;
+		gap: 30px;
 		justify-content: center;
 		flex-wrap: wrap;
 	}
 
 	&__item {
-		flex: 0 0 350px;
+		flex: 0 0 100%;
+		min-width: 350px;
 		position: relative;
 		overflow: hidden;
 		height: fit-content;
@@ -58,8 +59,25 @@ body {
 		border-radius: 5px;
 		box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5s);
 		&:hover {
-			transform: scale(1.1);
+			transform: scale(0.9);
 			cursor: pointer;
+		}
+	}
+}
+@media (min-width: 760px) {
+	.gallery {
+		&__counter {
+			text-align: right;
+		}
+		&__row {
+			justify-content: space-around;
+		}
+		&__item {
+			flex: 0 0 350px;
+			&:hover {
+				transform: scale(1.1);
+				cursor: pointer;
+			}
 		}
 	}
 }
