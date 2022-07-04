@@ -32,7 +32,7 @@ const template = (data) => {
 						</div>
 					</div>
 				</div>
-			</div>;`;
+			</div>`;
     })
     .join("");
 };
