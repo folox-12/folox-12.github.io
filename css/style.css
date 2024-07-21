@@ -1,8 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,700,900);
+:root {
+  --white-text-color: #fff;
+  --white-dark-text-color: #dedede;
+  --transperent-dark-black-color: rgba(255, 255, 255, 0.3)
+  color-scheme: light;
+}
+
 * {
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   list-style: none;
   padding: 0;
 }
@@ -13,15 +19,26 @@ body {
   font-family: Roboto;
 }
 
+#background {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  position: relative;
+  z-index: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 100%;
+  background-image: url("/img/bgc.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -32,18 +49,16 @@ body {
 .header__body {
   padding: 30px;
 }
-
 .header__text {
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
+  color: var(--white-text-color);
 }
 
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .gallery__counter {
@@ -52,52 +67,34 @@ body {
   padding: 5px 10px;
   margin-bottom: 15px;
 }
-
 .gallery__row {
   padding: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  gap: 30px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-
 .gallery__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  flex: 0 0 100%;
   min-width: 350px;
   position: relative;
   overflow: hidden;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
   border-radius: 5px;
-  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.gallery__item:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  cursor: pointer;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .gallery-counter__texts {
   display: inline-block;
-  color: grey;
+  color: var(--white-text-color);
 }
-
 .gallery-counter__texts:first-letter {
   text-transform: capitalize;
+}
+.gallery-counter__number {
+  color: var(--white-dark-text-color);
 }
 
 .gallery-item__image {
@@ -105,7 +102,6 @@ body {
   height: 400px;
   width: 100%;
 }
-
 .gallery-item__image img {
   height: 100%;
   width: 100%;
@@ -114,24 +110,17 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .gallery-item__image:hover + .gallery-item__hidden, .gallery-item__hidden:hover {
-  -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%);
-  -webkit-box-shadow: 15px black;
-          box-shadow: 15px black;
+  transform: translate(0, -100%);
+  box-shadow: 15px black;
 }
-
 .gallery-item__hidden {
   position: absolute;
   width: 100%;
   border-radius: 5px;
   min-height: 130px;
   padding: 15px;
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
   background-color: #fff;
 }
 
@@ -141,33 +130,23 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
 }
-
 @media (min-width: 760px) {
   .gallery__counter {
     text-align: right;
   }
   .gallery__row {
-    gap: 20px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .gallery__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 350px;
-            flex: 0 0 350px;
+    flex: 0 0 350px;
   }
   .gallery__item:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    transform: scale(1.1);
     cursor: pointer;
   }
 }
-
 @media (min-width: 1119px) {
   .gallery__row {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    justify-content: start;
   }
-}
+}/*# sourceMappingURL=style.css.map */
