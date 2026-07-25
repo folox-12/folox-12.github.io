@@ -2,8 +2,7 @@
 :root {
   --white-text-color: #fff;
   --white-dark-text-color: #dedede;
-  --transperent-dark-black-color: rgba(255, 255, 255, 0.3)
-  color-scheme: light;
+  --transperent-dark-black-color: rgba(255, 255, 255, 0.3) color-scheme: light;
 }
 
 * {
@@ -32,7 +31,6 @@ body {
 
 .wrapper {
   position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -61,16 +59,20 @@ body {
   flex: 1 0 auto;
 }
 
+.gallery {
+  position: relative;
+  z-index: 1;
+}
 .gallery__counter {
-  text-align: center;
   font-size: 1.5rem;
   padding: 5px 10px;
+  text-align: right;
   margin-bottom: 15px;
+  z-index: 2;
 }
 .gallery__row {
   padding: 15px;
   display: flex;
-  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -110,10 +112,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.gallery-item__image:hover + .gallery-item__hidden, .gallery-item__hidden:hover {
-  transform: translate(0, -100%);
-  box-shadow: 15px black;
-}
 .gallery-item__hidden {
   position: absolute;
   width: 100%;
@@ -130,23 +128,41 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
 }
-@media (min-width: 760px) {
+.gallery-item-hidden__description_texts {
+  display: none;
+}
+
+.gallery__item {
+  flex: 0 0 350px;
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery-item:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  .gallery-item__image:hover + .gallery-item__hidden, .gallery-item__hidden:hover {
+    transform: translate(0, -100%);
+    box-shadow: 15px black;
+  }
+}
+@media screen and (max-width: 768px) {
   .gallery__counter {
-    text-align: right;
+    text-align: center;
   }
   .gallery__row {
     justify-content: center;
   }
-  .gallery__item {
-    flex: 0 0 350px;
+  .gallery-item {
+    flex: 1 0 20%;
   }
-  .gallery__item:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+  .gallery-item__hidden {
+    position: relative;
   }
-}
-@media (min-width: 1119px) {
-  .gallery__row {
-    justify-content: start;
+  .gallery-item-hidden__title {
+    text-align: left;
+  }
+  .gallery-item-hidden__description-texts {
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */
